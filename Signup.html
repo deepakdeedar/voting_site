@@ -1,0 +1,170 @@
+<html>
+    <title>Sign Up For Secure Voting</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="icon" href="logo.PNG" type="image/icon type">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style>
+            .btn
+            {
+                cursor: pointer;
+                border: 0;
+                outline: 0;
+                text-transform: uppercase;
+                padding: 0.4em 0.7em;
+                font-size: 14px;
+                font-weight: bold;
+                box-shadow: 0px 4px 4px rgba(0,0,0,0);
+                color: white;
+                background-image: linear-gradient(100deg,Grey 50%,black 50%);
+                background-position: 100%;
+                background-size: 250%;
+                transition: background 0.5s ease-in, color 0.5s ease-in;
+                width: 100%;
+            }
+            .btn:hover
+            {
+                color: black;
+                background-position: 0;
+            }
+        </style>
+        <script>
+           $(document).ready(function(){
+               //name1=document.getElementById("name").value;
+               //document.getElementById("n").innerHTML=name1;
+               $("#check").hide();
+                
+               
+               $("#rpwd").keyup(function(){
+                   var1=document.getElementById("pwd").value;
+                var2=document.getElementById("rpwd").value;
+                   if(var1!=var2)
+                    {
+                        $("#check").show();
+                        $("#check").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+                    }
+                   else if(var1==var2)
+                       {
+                            $("#check").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+                            n=document.getElementById("name").value;
+                       }
+               });
+               
+             var name1;
+        $(document).ready(function(){
+            $("#p1").click(function(){
+        name1=document.getElementById("name").value;
+        document.getElementById("n").innerHTML="Hello,"+name1;
+            });
+        });
+        </script>
+    </head>
+    <body style="background: url(1.png) no-repeat; background-size: cover; z-index: 2;  background:rgba(0, 0, 0, 0.75); color: white;">
+        <nav style="background-color: gray" class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <a style="color: black;" class="navbar-brand" href="firstpage.html">S E C U R E &nbsp; V O T I N G</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right" >
+            <li class="active"><a href="firstpage.html" style="color: black">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black">Help<span class="caret"  ></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Elections</a></li>
+            <li><a href="#">Polls</a></li>
+            <li><a href="#">Counts</a></li>
+            <li class="divider"></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+        </li>
+        <li><a href="about.html" style="color: black">About</a></li>
+            <li><a href="#" style="color: black" id="n">Pricing</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="Signup.html" style="color: black; background-color: white"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="price.html" style="color: black"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+        </div>
+        </nav>
+        <div class="container" style="width: 280px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: sans-serif;">
+       
+            <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off">
+            <h2 style="border-bottom: 6px solid black; margin-bottom: 50px; padding: 13px 0; float: left;"><b>Create Your Account</b></h2>
+            <div style="width: 100%; overflow: hidden; font-size: 20px; padding: 6px 0; margin: 6px 0; border-bottom: 1px solid black;">
+            <i class="fa fa-male" aria-hidden="true" style="width: 26px; float: left; text-align: center;"></i>
+            <input type="text"  id="rpwd" placeholder="Enter Your Name" style="border: none; outline: none; background: none; color: white; font-size: 18px; width: 80%; float: left; margin: 0 10px;" name="rpwd">
+            </div>
+            <div style="width: 100%; overflow: hidden; font-size: 20px; padding: 8px 0; margin: 8px 0; border-bottom: 1px solid black;">
+            <i class="fa fa-user" aria-hidden="true" style="width: 26px; float: left; text-align: center;"></i>
+            <input type="text"  id="nameField" name="entry.1178678153" placeholder="Enter your username" style="border: none; outline: none; background: none; color: white; font-size: 18px; width: 80%; float: left; margin: 0 10px;" required>
+            </div>
+            <div style="width: 100%; overflow: hidden; font-size: 20px; padding: 8px 0; margin: 8px 0; border-bottom: 1px solid black;">
+            <i class="fa fa-envelope" aria-hidden="true" style="width: 26px; float: left; text-align: center;"></i>
+            <input type="email"  id="emailField" name="entry.1550997477" placeholder="Enter your email" style="border: none; outline: none; background: none; color: white; font-size: 18px; width: 80%; float: left; margin: 0 10px;" required>
+            </div>
+            <div style="width: 100%; overflow: hidden; font-size: 20px; padding: 8px 0; margin: 8px 0; border-bottom: 1px solid black;">
+            <i class="fa fa-key" aria-hidden="true" style="width: 26px; float: left; text-align: center;"></i>
+            <input type="password"  id="pwd" name="entry.1968560532" placeholder="Enter password" style="border: none; outline: none; background: none; color: white; font-size: 18px; width: 80%; float: left; margin: 0 10px;" name="pwd">
+            </div>
+            <div class="checkbox">
+            <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button class="btn btn-block"  id="send" type="submit" class="common_btn">Submit</button>
+        </form>
+       <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Your Request has been Recorded please Goto home page for more..</h3>
+
+</div>
+        <script>
+function postToGoogle() {
+                var field1 = $("#nameField").val();
+                var field2 = $("#emailField").val();
+                var field3 = $("#pwd").val();
+ 				
+				if(field1 == ""){
+					alert('Please Fill Your Name');
+					document.getElementById("nameField").focus();
+					return false;
+				}
+				if(field2 == ""){
+					alert('Please Fill Your Email');
+					document.getElementById("emailField").focus();
+					return false;
+				}
+                if(field3 == ""){
+					alert('Please Fill Your password');
+					document.getElementById("pwd").focus();
+					return false;
+				}
+
+				
+	
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSejDBE-BiXfq4o94x3YGz8ooUIzW-vNYd8RyEgRp6_Ew_tV6Q/formResponse?",
+					data: {"entry.1178678153": field1, "entry.1550997477": field2, "entry.1968560532": field3},
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{
+
+							$('#success-msg').show();
+							$('#form').hide();
+							
+						}
+                });
+				return false;
+            }
+            //https://docs.google.com/spreadsheets/d/1I7XRILDuS0Wnzy37JbtiTgYrd1QoEEOlAHJ0EM2Illk/edit#gid=1885293814
+</script>
+    </body>
+</html>

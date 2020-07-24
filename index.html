@@ -1,0 +1,216 @@
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+var number = /([0-9])/;
+var alphabets = /([a-z])/;
+var upper=/([A-Z])/;
+var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+var final=0;    
+$(document).ready(function(){
+$("#pwd").keyup(function(){
+    
+if($('#pwd').val().length==0)
+    {
+        $("#a").width("0%").addClass("progress-bar-danger");
+        document.getElementById("a").innerHTML="";
+        $("#8").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+        $("#u").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+        $("#l").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+        $("#d").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+        $("#s").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+    }    
+
+if($('#pwd').val().length>0 && $('#pwd').val().length<4)
+    {
+        $("#8").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+        $("#a").width("10%").addClass("progress-bar-danger");
+        document.getElementById("a").innerHTML="Too Weak";
+    }
+
+if($('#pwd').val().length>4 && $('#pwd').val().length<6)
+    {
+        $("#8").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+        $("#a").width("30%").addClass("progress-bar-danger");
+        document.getElementById("a").innerHTML="Very Weak";
+    }
+if($('#pwd').val().length>6 && $('#pwd').val().length<8)
+    {
+        $("#8").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+        $("#a").width("40%").addClass("progress-bar-danger");
+        document.getElementById("a").innerHTML="Weak";
+    }    
+if($('#pwd').val().length>=8)
+    {
+        
+    }
+if($('#pwd').val().match(upper))
+    {
+        $("#u").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+    }
+else
+    {
+        $("#u").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+    }
+if($('#pwd').val().match(alphabets))
+    {
+        $("#l").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+    }
+else
+    {
+        $("#l").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+    }    
+if($('#pwd').val().match(number))
+    {
+        $("#d").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+    } 
+else
+    {
+        $("#d").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+    }    
+if($('#pwd').val().match(special_characters))
+    {
+        $("#s").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+    }  
+ else
+    {
+        $("#s").removeClass("glyphicon glyphicon-ok").addClass("glyphicon glyphicon-remove").css("color","red");
+    }   
+if($('#pwd').val().match(number) && $('#pwd').val().length>=8)
+    {
+        document.getElementById("a").innerHTML="Good";
+        $("#8").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+        $("#a").width("60%").removeClass("progress-bar-danger").addClass("progress-bar-info");
+    }
+    
+if($('#pwd').val().match(alphabets) && $('#pwd').val().length>=8)
+    {
+        document.getElementById("a").innerHTML="Good";
+        $("#8").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+        $("#a").width("60%").removeClass("progress-bar-danger").addClass("progress-bar-info");
+    }
+    
+if($('#pwd').val().match(upper) && $('#pwd').val().length>=8)
+    {
+        document.getElementById("a").innerHTML="Good";
+        $("#8").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+        $("#a").width("60%").removeClass("progress-bar-danger").addClass("progress-bar-info");
+    }
+if($('#pwd').val().match(special_characters) && $('#pwd').val().length>=8)
+    {
+        document.getElementById("a").innerHTML="Good";
+        $("#8").removeClass("glyphicon glyphicon-remove").addClass("glyphicon glyphicon-ok").css("color","green");
+        $("#a").width("60%").removeClass("progress-bar-danger").addClass("progress-bar-info");
+    }
+    
+if($('#pwd').val().match(upper) && $('#pwd').val().match(alphabets) &&  $('#pwd').val().length>=8)
+    {
+         document.getElementById("a").innerHTML="Very Good";
+        $("#a").width("70%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }
+if($('#pwd').val().match(upper) && $('#pwd').val().match(number) &&  $('#pwd').val().length>=8)
+    {
+         document.getElementById("a").innerHTML="Very Good";
+        $("#a").width("70%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }
+if($('#pwd').val().match(upper) && $('#pwd').val().match(special_characters) &&  $('#pwd').val().length>=8)
+    {
+         document.getElementById("a").innerHTML="Very Good";
+        $("#a").width("70%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }
+if($('#pwd').val().match(number) && $('#pwd').val().match(alphabets) &&  $('#pwd').val().length>=8)
+    {
+         document.getElementById("a").innerHTML="Very Good";
+        $("#a").width("70%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }    
+if($('#pwd').val().match(special_characters) && $('#pwd').val().match(alphabets) &&  $('#pwd').val().length>=8)
+    {
+         document.getElementById("a").innerHTML="Very Good";
+        $("#a").width("70%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }      
+    
+if($('#pwd').val().match(number) && $('#pwd').val().match(alphabets) &&  $('#pwd').val().length>=8 && $('#pwd').val().match(upper))
+    {
+         document.getElementById("a").innerHTML="Strong";
+        $("#a").width("85%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }
+if($('#pwd').val().match(special_characters) && $('#pwd').val().match(alphabets) &&  $('#pwd').val().length>=8 && $('#pwd').val().match(upper))
+    {
+         document.getElementById("a").innerHTML="Strong";
+        $("#a").width("85%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }    
+    
+if($('#pwd').val().match(number) && $('#pwd').val().match(special_characters) &&  $('#pwd').val().length>=8 && $('#pwd').val().match(upper))
+    {
+         document.getElementById("a").innerHTML="Strong";
+        $("#a").width("85%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }    
+
+if($('#pwd').val().match(number) && $('#pwd').val().match(alphabets) &&  $('#pwd').val().length>=8 && $('#pwd').val().match(special_characters))
+    {
+         document.getElementById("a").innerHTML="Strong";
+        $("#a").width("85%").removeClass("progress-bar-info").addClass("progress-bar-warning");
+    }    
+    
+if($('#pwd').val().match(number) && $('#pwd').val().match(alphabets) && $('#pwd').val().match(special_characters) && $('#pwd').val().length>=8 && $('#pwd').val().match(upper))
+    {
+         document.getElementById("a").innerHTML="Very Strong";
+        $("#a").width("100%").removeClass("progress-bar-warning").addClass("progress-bar-success");
+        final=100;
+    }
+});
+    
+    $("#ok").click(function(){
+        if(final==100)
+            alertify.alert("Message");
+    });
+    
+    $("#show").hover(
+  function functionName() {
+    //Change the attribute to text
+    $("#pwd").attr("type", "text");
+    $("#eye")
+      .removeClass("glyphicon-eye-open")
+      .addClass("glyphicon-eye-close");
+  },
+  function() {
+    //Change the attribute back to password
+    $("#pwd").attr("type", "password");
+    $("#eye").removeClass("glyphicon-eye-close").addClass("glyphicon-eye-open");
+  }
+);
+    
+    
+});
+</script>
+
+</head>
+<body>
+
+<div class="container">
+<div class="jumbotron">
+    <h1>Password Strength Indicator</h1><br>
+<form>
+<lable><b>Password:</b></lable><br>
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> <input type="password" class="form-control" minlength="8" id="pwd"><span class="input-group-addon" id="show"><i class="glyphicon glyphicon-eye-open" id="eye"></i></span>
+</div>
+</form> 
+    <p><span class="glyphicon glyphicon-remove" style="color: red;" id="8"></span>More than or equal to 8 characters</p>
+    <p><span class="glyphicon glyphicon-remove" style="color: red;" id="u"></span>Contain upper case alphabet</p>
+    <p><span class="glyphicon glyphicon-remove" style="color: red;" id="l"></span>Contain lower case alphabet</p>
+    <p><span class="glyphicon glyphicon-remove" style="color: red;" id="d"></span>Contain digit</p>
+    <p><span class="glyphicon glyphicon-remove" style="color: red;" id="s"></span>Contain special character</p>
+ <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%" id="a">
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

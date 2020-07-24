@@ -1,0 +1,74 @@
+ <div class="ps" style="margin-bottom: 30px; margin-top: 30px;">
+            <a href="#p1"><img src="avatar1.png"></a>
+            <a href="#p2"><img src="avatar2.png"></a>
+            <a href="#p3"><img src="avatar1.png"></a>
+        </div>
+        
+        <div class="section" id="p1">
+            <span class="name">John Doe</span>
+            <span style="height: 3px; width: 160px; background-color: blue;display: block; margin: auto; margin-bottom: 40px;"></span>
+            <p>All issues are resolved promptly. In communication, the employees are pleasant, helpful. Always offer new ideas, new ways to develop, improve our project</p>
+        </div>
+        
+        <div class="section" id="p2">
+            <span class="name">Deepak Deedar Singla</span>
+            <span style="height: 3px; width: 160px; background-color: blue;display: block; margin: auto; margin-bottom: 40px;"></span>
+            <p>Excellent client manager. He is always accurate, all promises are fulfilled, all questions get answers, the company presents very attentive and positive approach.</p>
+        </div>
+        
+        <div class="section" id="p3">
+            <span class="name">Divleen Kaur</span>
+            <span style="height: 3px; width: 160px; background-color: blue;display: block; margin: auto; margin-bottom: 40px;"></span>
+            <p>Good afternoon. I am very pleased with the quality of the work of your employee representing your wonderful company.</p>
+        </div>
+          <style>
+.btn {
+  background-color: inherit;
+  border: 5;
+  border-color: black;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 1px;
+  opacity: 1;
+  transition: 0.3s;
+    border-width: 2px;
+    width: 250px;
+}
+
+.btn:hover {opacity: 2;color: white;background-color: black;}
+      .ps a{
+          display: inline-block;
+          margin: 0 30px;
+          width: 160px;
+          height: 160px;
+          overflow: hidden;
+          border-radius: 50%;
+      }
+      .ps a img{
+          width: 100%;
+          filter: grayscale(100%);
+          transition: 0.4s all;
+      }
+      .ps a:hover > img{
+          filter: none;
+      }
+      .section{
+          width: 600px;
+          margin: auto;
+          font-size: 20px;
+          text-align: center;
+          height: 0;
+          overflow: hidden;
+      }
+      .section:target{
+          height: auto;
+      }
+      .name{
+          display: block;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          font-size: 22px;
+      }
+</style>
